@@ -28,9 +28,4 @@ install:
   - npm install
 
 script:
-  - npm run ci:travis
-  - npm run test -- --watch=false
-  - npm run e2e
-
-after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then npm run build; docker build -t adrianforsius/home .; docker tag adrianforsius/home adrianforsius/home:$(git rev-parse --short HEAD); docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"; docker push adrianforsius/home; fi
