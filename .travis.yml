@@ -1,0 +1,36 @@
+sudo: false
+
+dist: trusty
+language: node_js
+
+cache:
+  directories:
+    - node_modules
+
+addons:
+  chrome: stable
+
+node_js:
+  - "6"
+  - "7"
+  - "8"
+
+matrix:
+  fast_finish: true
+
+before_install:
+  - npm install npm@5 -g
+  - npm cache verify
+  - npm prune
+  - npm update
+
+install:
+  - npm install
+
+script:
+  - npm run ci:travis
+  - npm run test -- --watch=false
+  - npm run e2e
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then npm run build; docker build -t adrianforsius/home .; docker tag adrianforsius/home adrianforsius/home:$(git rev-parse --short HEAD); docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"; docker push adrianforsius/home; fi
