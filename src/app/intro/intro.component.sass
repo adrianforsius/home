@@ -1,0 +1,61 @@
+.intro
+  position: relative
+  text-align: center
+  .cover
+    background-image: url(/assets/img/me.jpg);
+    background-size: cover;
+    font-family: Montserrat
+    color: white
+    .message
+      letter-spacing: 4px
+      font-size: 2em
+      padding: 15%
+
+.intro-media
+  width: 100%
+  position: absolute
+  display: block
+  top: 0
+  left: 0
+  height: 100%
+
+.intro-caption-waper
+  height: 100%
+  position: absolute
+  width: 100%
+  z-index: 2
+
+.intro-content
+  display: table
+  height: 100%
+  text-align: center
+  width: 100%
+
+.intro-content-inner
+  display: table-cell
+  height: 100%
+  vertical-align: middle
+
+.intro-img-circle
+  margin-left: auto
+  margin-right: auto
+  width: 120px
+  height: 120px
+  border: 5px solid rgba(0, 0, 0, 0.2)
+  border-radius: 50%
+  -moz-border-radius: 50%
+  -webkit-border-radius: 50%
+  margin-bottom: 30px
+  img
+    outline: none
+    border: none
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    -moz-border-radius: 50%
+    -webkit-border-radius: 50%
+
+@media (max-width: 767px)
+  .intro-title
+    letter-spacing: 0
+    font-size: 24px

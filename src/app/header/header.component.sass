@@ -1,0 +1,107 @@
+.header
+  position: absolute
+  text-align: center
+  top: 0px
+  z-index: 1000
+  color: #fff
+  width: 100%
+  height: 65px
+  transition: background-color 200ms ease-in-out 0s
+  -o-transition: background-color 200ms ease-in-out 0s
+  -moz-transition: background-color 200ms ease-in-out 0s
+  -webkit-transition: background-color 200ms ease-in-out 0s
+  background-color: rgba(51, 51, 51, 0.9)
+  font-family: Raleway, sans-serif
+  &.header-fixed
+    display: block
+    margin-top: 0 !important
+    position: fixed
+    a.current, &.current a
+      color: #c7a674
+    .logo a
+      margin-top: 15px
+      margin-bottom: 15px
+      width: 160px
+      transition: all 0.3s ease 0s
+      -o-transition: all 0.3s ease 0s
+      -moz-transition: all 0.3s ease 0s
+      -webkit-transition: all 0.3s ease 0s
+    .nav-menu ul.nav-menu-inner li a
+      padding: 26px 12px
+  .header-inner
+    padding-left: 30px
+    padding-right: 30px
+    position: relative
+    .logo
+      float: left
+      text-align: left
+      display: inline-block
+      margin: 7px 0
+      .text
+        padding: 10px
+        color: white
+        margin: 0 auto
+        border: 2px solid
+
+@media all and (max-width: 1024px)
+  .header
+    height: 65px
+    .logo a
+      margin-top: 15px
+      margin-bottom: 15px
+      width: 160px
+      transition: all 0.3s ease 0s
+      -o-transition: all 0.3s ease 0s
+      -moz-transition: all 0.3s ease 0s
+      -webkit-transition: all 0.3s ease 0s
+
+.nav-menu
+  position: static
+  float: right
+  display: block
+  max-height: 312px
+  ul.nav-menu-inner li
+    &.active a, a.active, &:hover a, a:hover
+      color: #c7a674
+      display: block
+  ul.nav-menu-inner
+    margin: 0
+    padding: 0
+    list-style: none
+    li
+      display: inline-block
+      list-style: none
+      text-align: center
+      a
+        display: block
+        color: #fff
+        font-size: 13px
+        line-height: 1
+        padding: 26px 12px
+        font-weight: 700
+        text-transform: uppercase
+        letter-spacing: 1px
+        font-family: "Raleway",sans-serif
+
+
+@media all and (max-width: 1024px)
+  .nav-menu
+    ul.nav-menu-inner li
+      display: block
+      width: 100%
+    position: fixed
+    top: 65px
+    left: 0
+    float: none
+    display: block
+    width: 100%
+    background: #333
+    overflow-y: auto
+    display: none
+    z-index: 999
+  .nav-menu-icon, .header-fixed .nav-menu-icon
+    display: inline-block
+    float: right
+  .nav-menu ul.nav-menu-inner li a, .header-fixed .nav-menu ul.nav-menu-inner li a
+    padding: 20px 12px
+    border-top: 1px solid #444
